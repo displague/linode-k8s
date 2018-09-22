@@ -9,7 +9,6 @@ resource "null_resource" "node" {
     host        = "${element(var.connections, var.master_count + count.index)}"
     user        = "root"
     agent       = true
-    private_key = "${var.private_key}"
   }
 
   provisioner "remote-exec" {

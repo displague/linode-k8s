@@ -10,13 +10,15 @@ variable "worker_count" {
 
 variable "public_key_path" {
   type = "string"
+  default = "~/.ssh/id_rsa.pub"
 }
 
 variable "private_key_path" {
   type = "string"
+  default = "~/.ssh/id_rsa"
 }
 
-variable "linode_api_key" {
+variable "linode_token" {
   type = "string"
 }
 
@@ -31,6 +33,7 @@ variable "domain" {
 
 variable "hostname_format" {
   type = "string"
+  default = "node-%d"
 }
 
 variable "token" {

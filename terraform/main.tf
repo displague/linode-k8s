@@ -1,9 +1,9 @@
 module "provider" {
   source = "./provider/linode"
 
-  linode_api_key = "${var.linode_api_key}"
-  root_password  = "${var.root_password}"
-  public_key     = "${file(var.public_key_path)}"
+  linode_token   = "${var.linode_token}"
+  root_password      = "${var.root_password}"
+  public_key     = "${chomp(file(var.public_key_path))}"
 
   count           = "${var.worker_count + var.master_count}"
   hostname_format = "${var.hostname_format}"

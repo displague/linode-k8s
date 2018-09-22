@@ -9,7 +9,6 @@ resource "null_resource" "wireguard" {
     host        = "${element(var.connections, count.index)}"
     user        = "root"
     agent       = true
-    private_key = "${var.private_key}"
   }
 
   provisioner "remote-exec" {

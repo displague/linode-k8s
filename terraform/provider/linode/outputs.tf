@@ -1,13 +1,13 @@
 output "hostnames" {
-  value = ["${linode_linode.node.*.name}"]
+  value = ["${linode_instance.node.*.label}"]
 }
 
 output "private_ips" {
-  value = ["${linode_linode.node.*.private_ip_address}"]
+  value = ["${linode_instance.node.*.private_ip_address}"]
 }
 
 output "public_ips" {
-  value = ["${linode_linode.node.*.ip_address}"]
+  value = ["${linode_instance.node.*.ip_address}"]
 }
 
 output "public_network_interface" {
@@ -15,5 +15,5 @@ output "public_network_interface" {
 }
 
 output "private_network_interface" {
-  value = "eth0:1"
+  value = "eth0"
 }
